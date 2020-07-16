@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  xboxrestapi:
+    container_name: xboxrestapi
+    image: nanowireuk/xbox-smartglass-core:arm32v7-latest
+    environment: [
+      "SERVER=0.0.0.0",
+      "PORT=5557"
+    ]
+    volumes: [
+      '/etc/localtime:/etc/localtime:ro'
+    ]
+    restart: always
+    ports: ['5557:5557']
